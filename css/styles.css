@@ -37,6 +37,7 @@
  --modal-close-bgc: #e7e9fc;
  --modal-close-bgc-hover: #404bbf;
  --backdrop-bgc: rgba(46, 47, 66, 0.4);
+ --modal-icon-fill: #2e2f42;
 }
 
 body {
@@ -426,7 +427,7 @@ body {
  fill: currentColor;
 }
 
-/* Footer */
+/* -----FOOTER------ */
 .footer {
  padding-top: 100px;
  padding-bottom: 100px;
@@ -472,7 +473,6 @@ body {
 .footer-social-list {
  display: flex;
  gap: 16px;
- /* background-color: black;  */
 }
 .footer-social-link {
  display: flex;
@@ -492,6 +492,77 @@ body {
 .footer-social-icon {
  width: 24px;
  height: 24px;
+}
+
+.subscribe-box {
+ margin-left: 80px;
+}
+.subscribe {
+ display: flex;
+}
+.subscr-field {
+ position: relative;
+}
+.sub-label {
+ position: absolute;
+ top: 50%;
+ left: 16px;
+ transform: translateY(-50%);
+ font-weight: 400;
+ font-size: 12px;
+ line-height: 2;
+ letter-spacing: 0.04em;
+
+ color: rgba(255, 255, 255, 0.6);
+}
+.sub-input {
+ width: 264px;
+ height: 40px;
+ background-color: transparent;
+ margin: 0;
+ padding: 8px 16px;
+ border: 1px solid rgba(255, 255, 255, 0.3);
+ border-radius: 4px;
+ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+ font-weight: 400;
+ font-size: 16px;
+ line-height: 1.5;
+ letter-spacing: 0.02em;
+ color: #e7e9fc;
+}
+.sub-input:focus {
+ outline: transparent;
+}
+.sub-input:focus + .sub-label,
+.sub-input:not(:placeholder-shown) + .sub-label {
+ transform: translateY(-40px);
+}
+.sub-btn-box {
+ position: relative;
+ margin-left: 24px;
+}
+.sub-btn {
+ width: 165px;
+ height: 40px;
+ padding: 8px 24px;
+ font-weight: 500;
+ font-size: 16px;
+ line-height: 1.5;
+ display: flex;
+ align-items: center;
+ text-align: center;
+ letter-spacing: 0.04em;
+
+ color: #ffffff;
+ background-color: var(--acsent);
+ border-radius: 4px;
+ border: none;
+}
+.sub-icon {
+ position: absolute;
+ bottom: 50%;
+ right: 24px;
+ transform: translateY(50%);
 }
 /* Portfolio */
 
@@ -666,7 +737,7 @@ border: 0.5px solid #f4f4fd;} */
  fill: #ffffff;
 }
 .modal-title {
- margin-bottom: 16px;
+ margin-bottom: 8px;
  font-weight: 500;
  font-size: 16px;
  line-height: 1.5;
@@ -675,34 +746,60 @@ border: 0.5px solid #f4f4fd;} */
  color: #2e2f42;
 }
 
+.form-field {
+ margin-top: 8px;
+ display: flex;
+ flex-direction: column;
+}
 .modal-input {
  width: 100%;
  height: 40px;
- margin-bottom: 8px;
  padding-left: 16px;
  background-color: transparent;
  border: 1px solid rgba(33, 33, 33, 0.2);
  border-radius: 4px;
+ transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-input:focus {
+ outline: transparent;
+ border: 1px solid var(--acsent);
 }
 
 .modal-label {
  display: inline-block;
  margin-bottom: 4px;
+
  font-weight: 400;
  font-size: 12px;
  line-height: 1.6667;
  letter-spacing: 0.01em;
  color: #8e8f99;
 }
+.svg-centr {
+ position: relative;
+}
+.modal-svg {
+ position: absolute;
+ top: 50%;
+ left: 16px;
+ fill: var(--modal-icon-fill);
+ transform: translateY(-50%);
+ transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-input:focus + .modal-svg {
+ fill: var(--acsent);
+}
+
 .modal-comment {
  width: 100%;
  height: 120px;
  padding: 8px 16px;
- 
+
  background-color: transparent;
  border: 1px solid rgba(33, 33, 33, 0.2);
  border-radius: 4px;
  resize: none;
+ transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-comment::placeholder {
@@ -712,4 +809,42 @@ border: 0.5px solid #f4f4fd;} */
  letter-spacing: 0.04em;
 
  color: rgba(117, 117, 117, 0.5);
+}
+.modal-comment:focus {
+ outline: transparent;
+ border: 1px solid var(--acsent);
+}
+.policy-field {
+ font-weight: 400;
+ font-size: 12px;
+ line-height: 1.3333;
+ letter-spacing: 0.04em;
+ margin-bottom: 24px;
+ margin-top: 16px;
+}
+.policy-text {
+ color: #757575;
+ margin-left: 8px;
+}
+.policy-link {
+ text-decoration-line: underline;
+ color: var(--acsent);
+}
+
+.modal-btn {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin: auto;
+ width: 169px;
+ height: 56px;
+ font-weight: 500;
+ font-size: 16px;
+ line-height: 1.5;
+ letter-spacing: 0.04em;
+ color: #ffffff;
+ background-color: var(--acsent);
+ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+ border-radius: 4px;
+ border: none;
 }
