@@ -493,7 +493,7 @@ body {
  width: 24px;
  height: 24px;
 }
-
+/* ---SUBSCRIBE--BOX--- */
 .subscribe-box {
  margin-left: 80px;
 }
@@ -514,6 +514,7 @@ body {
  letter-spacing: 0.04em;
 
  color: rgba(255, 255, 255, 0.6);
+ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .sub-input {
  width: 264px;
@@ -533,7 +534,7 @@ body {
 .sub-input:focus {
  outline: transparent;
 }
-.sub-input:focus + .sub-label,
+.sub-input:focus-within + .sub-label,
 .sub-input:not(:placeholder-shown) + .sub-label {
  transform: translateY(-40px);
 }
@@ -754,7 +755,7 @@ border: 0.5px solid #f4f4fd;} */
 .modal-input {
  width: 100%;
  height: 40px;
- padding-left: 16px;
+ padding-left: 40px;
  background-color: transparent;
  border: 1px solid rgba(33, 33, 33, 0.2);
  border-radius: 4px;
@@ -822,9 +823,27 @@ border: 0.5px solid #f4f4fd;} */
  margin-bottom: 24px;
  margin-top: 16px;
 }
+.policy-input:checked + .policy-text::before {
+ background: #404bbf;
+ border: 1.25px solid #404bbf;
+ border-radius: 2px;
+ background-image: url(../images/index-icons/tick.svg);
+ background-repeat: no-repeat;
+ background-position: center;
+}
 .policy-text {
  color: #757575;
- margin-left: 8px;
+ display: flex;
+ align-items: center;
+}
+.policy-text::before {
+ content: '';
+ display: block;
+ width: 16px;
+ height: 16px;
+ margin-right: 8px;
+ border: 1.25px solid #2e2f42;
+ border-radius: 2px;
 }
 .policy-link {
  text-decoration-line: underline;
